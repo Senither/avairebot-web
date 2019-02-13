@@ -16,6 +16,7 @@ const router = new VueRouter({
             name: 'home',
             component: Home,
             meta: {
+                index: 0,
                 title: 'Home - AvaIre Discord Bot',
                 metaTags: [
                     {
@@ -30,6 +31,7 @@ const router = new VueRouter({
             name: 'faq',
             component: FAQ,
             meta: {
+                index: 1,
                 title: 'FAQ - AvaIre Discord Bot',
                 metaTags: [
                     {
@@ -55,7 +57,7 @@ import App from './views/App';
 const app = new Vue({
     el: '#avaire',
     components: {
-        App,
+        App
     },
     router,
 });

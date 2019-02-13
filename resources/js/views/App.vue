@@ -27,7 +27,7 @@
             </div>
         </nav>
 
-        <transition>
+        <transition :name="transitionDirection">
             <router-view></router-view>
         </transition>
     </div>
@@ -35,9 +35,22 @@
 
 <script>
     export default {
+        data() {
+            return {
+                transitionDirection: 'slide-right',
+            };
+        },
         methods: {
             url: (route) => {
                 return window.baseUrl + route;
+            }
+        },
+        watch: {
+            '$route' (to, from) {
+                const toDepth = to.meta.index || 0;
+                const fromDepth = from.meta.index || 0;
+
+                this.transitionDirection = toDepth < fromDepth ? 'slide-right' : 'slide-left'
             }
         }
     }
