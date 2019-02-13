@@ -18,10 +18,14 @@
                         </router-link>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" :href="url('/support')">Support</a>
+                        <router-link tag="li" :to="{ name: 'support' }" exact active-class="active" class="nav-item">
+                            <a class="nav-link">Support</a>
+                        </router-link>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" :href="url('/invite')">Invite</a>
+                        <router-link tag="li" :to="{ name: 'invite' }" exact active-class="active" class="nav-item">
+                            <a class="nav-link">Invite</a>
+                        </router-link>
                     </li>
                 </ul>
             </div>

@@ -6,13 +6,21 @@ use Illuminate\Http\Request;
 
 class RedirectController extends Controller
 {
-    public function support()
+    public function support(Request $request)
     {
-        return 'support';
+        return $this->handleRedirectTo($request, config('discord.support-url'));
     }
 
-    public function invite()
+    public function invite(Request $request)
     {
-        return 'invite';
+        return $this->handleRedirectTo($request, config('discord.support-url'));
+    }
+
+    protected function handleRedirectTo(Request $request, $url)
+    {
+        if ($request->has('raw') && $request->get('raw') == 'yes') {
+            return $url;
+        }
+        return redirect($url);
     }
 }
