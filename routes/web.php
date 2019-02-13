@@ -11,6 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/support', 'RedirectController@support');
+Route::get('/invite', 'RedirectController@invite');
+
+Route::get('/{any}', 'SpaController@index')->where('any', '.*');
