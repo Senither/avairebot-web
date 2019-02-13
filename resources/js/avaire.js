@@ -15,11 +15,29 @@ const router = new VueRouter({
             path: '/',
             name: 'home',
             component: Home,
+            meta: {
+                title: 'Home - AvaIre Discord Bot',
+                metaTags: [
+                    {
+                        name: 'description',
+                        content: 'Lorem ipsum'
+                    },
+                ],
+            },
         },
         {
             path: '/faq',
             name: 'faq',
-            component: FAQ
+            component: FAQ,
+            meta: {
+                title: 'FAQ - AvaIre Discord Bot',
+                metaTags: [
+                    {
+                        name: 'description',
+                        content: 'Lorem ipsum'
+                    },
+                ],
+            },
         },
         {
             path: '/*',
@@ -28,6 +46,9 @@ const router = new VueRouter({
         },
     ],
 });
+
+import formatMetadata from './router/FormatMetadata';
+router.beforeEach(formatMetadata);
 
 import App from './views/App';
 
@@ -38,5 +59,3 @@ const app = new Vue({
     },
     router,
 });
-
-document.title = 'Loading...';
