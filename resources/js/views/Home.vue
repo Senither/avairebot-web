@@ -1,17 +1,19 @@
 <template>
-    <div class="container content">
-        <div class="row justify-content-center">
-            <div class="col-md-12">
-                <div class="card card-default">
-                    <div class="card-header">Home Page</div>
+    <section class="section content">
+        <div class="container">
+            <h1 class="title">Home</h1>
+            <h2 class="subtitle">
+                Lorem ipsum dolor sit amet.
+            </h2>
 
-                    <div class="card-body">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita laborum tempora nulla, delectus fuga, optio officiis distinctio doloremque non iusto quod earum modi aperiam dolorum beatae commodi dicta est? Corporis.
-                    </div>
-                </div>
-            </div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
         </div>
-    </div>
+  </section>
 </template>
 
 <script>

@@ -8,13 +8,6 @@
 // Bulma
 @import '~bulma/bulma';
 
-.container.content {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    overflow-x: hidden;
-}
-
 // Fade
 .fade-enter-active, .fade-leave-active {
     transition: opacity .325s;
@@ -25,7 +18,7 @@
 
 // Slide
 .slide-left-leave-active, .slide-left-enter-active {
-    transition: 0.8s;
+    transition: 0.3s;
 }
 .slide-left-enter {
     opacity: 0;
@@ -37,7 +30,7 @@
 }
 
 .slide-right-leave-active, .slide-right-enter-active {
-    transition: 0.8s;
+    transition: 0.3s;
 }
 .slide-right-enter {
     opacity: 0;
@@ -46,4 +39,12 @@
 .slide-right-leave-to {
     opacity: 0;
     transform: translate(100%, 0);
+}
+
+// Animate Hero
+.hero {
+    min-height: 1px;
+    transition-duration: 0.3s;
+    transition-property: min-height;
+    transition-timing-function: ease;
 }

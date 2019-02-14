@@ -1,4 +1,5 @@
 import Home from '../views/Home';
+import Hero from '../views/Hero';
 import FAQ from '../views/FAQ';
 import RedirectToUrl from '../views/RedirectToUrl';
 
@@ -6,7 +7,10 @@ export default [
     {
         path: '/',
         name: 'home',
-        component: Home,
+        components: {
+            default: Home,
+            hero: Hero,
+        },
         meta: {
             index: 0,
             title: 'Home - AvaIre Discord Bot',
