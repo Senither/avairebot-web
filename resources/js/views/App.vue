@@ -55,6 +55,15 @@
         <transition name="fade" mode="out-in">
             <router-view></router-view>
         </transition>
+
+        <footer class="footer">
+            <div class="content has-text-centered">
+                <p>
+                    Created by <a href="https://senither.com/">Alexis Tan</a>, powered by <a href="https://m.do.co/c/9f589c4101c3">DigitalOcean</a>, <a href="https://bulma.io/">Bulma</a>, <a href="https://vuejs.org/">VueJS</a>, and <a href="https://laravel.com/">Laravel</a>.
+                    <br>"Discord", "Discord App", and any associated logos are registered trademarks of Hammer & Chisel, Inc.
+                </p>
+            </div>
+        </footer>
     </div>
 </template>
 
