@@ -1,6 +1,6 @@
 
 // Fonts
-@import url('https://fonts.googleapis.com/css?family=Nunito');
+@import url('https://fonts.googleapis.com/css?family=Condiment|Roboto');
 
 // Variables
 @import 'variables';
@@ -8,43 +8,12 @@
 // Bulma
 @import '~bulma/bulma';
 
-// Fade
-.fade-enter-active, .fade-leave-active {
-    transition: opacity .325s;
-}
-.fade-enter, .fade-leave-to {
-    opacity: 0;
-}
+// Animations
+@import 'animations/hero';
+@import 'animations/navigation';
 
-// Slide
-.slide-left-leave-active, .slide-left-enter-active {
-    transition: 0.3s;
-}
-.slide-left-enter {
-    opacity: 0;
-    transform: translate(100%, 0);
-}
-.slide-left-leave-to {
-    opacity: 0;
-    transform: translate(-100%, 0);
-}
-
-.slide-right-leave-active, .slide-right-enter-active {
-    transition: 0.3s;
-}
-.slide-right-enter {
-    opacity: 0;
-    transform: translate(-100%, 0);
-}
-.slide-right-leave-to {
-    opacity: 0;
-    transform: translate(100%, 0);
-}
-
-// Animate Hero
-.hero {
-    min-height: 1px;
-    transition-duration: 0.3s;
-    transition-property: min-height;
-    transition-timing-function: ease;
-}
+// Core
+@import 'core/layout';
+@import 'core/button';
+@import 'core/navigation';
+@import 'core/hero';

@@ -1,0 +1,13 @@
+
+.hero-body {
+    & img.avaire {
+        border: 2px solid darken($primary, 20%);
+        border-radius: 50%;
+    }
+
+    & h1.avaire {
+        font-size: 5.35em;
+        font-family: 'Condiment', cursive;
+        font-weight: 400;
+    }
+}

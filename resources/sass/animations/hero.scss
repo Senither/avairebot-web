@@ -1,0 +1,8 @@
+
+// Animate Hero
+.hero {
+    min-height: 1px;
+    transition-duration: 0.3s;
+    transition-property: min-height;
+    transition-timing-function: ease;
+}

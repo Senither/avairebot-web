@@ -5,7 +5,7 @@
                 <div class="container">
                     <nav class="navbar" role="navigation" aria-label="main navigation" data-aos="fade-down" data-aos-easing="ease-in-out-cubic" data-aos-duration="200" data-aos-delay="400">
                         <div class="navbar-brand">
-                            <router-link :to="{ name: 'home' }" class="navbar-item">
+                            <router-link :to="{ name: 'home' }" class="avaire">
                                 AvaIre
                             </router-link>
 
