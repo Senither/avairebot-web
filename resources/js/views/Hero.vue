@@ -1,7 +1,7 @@
 <template>
     <div class="hero-body">
         <div class="container has-text-centered">
-            <img src="https://avairebot.com/images/main-slider/content-image-3.png" class="avaire">
+            <img src="/img/avaire-512x512.png" class="avaire">
             <h1 class="avaire">AvaIre</h1>
 
             <h2 class="tagline">
