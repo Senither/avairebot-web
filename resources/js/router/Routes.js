@@ -1,5 +1,6 @@
 import Home from '../views/Home';
 import Hero from '../views/Hero';
+import Commands from '../views/Commands';
 import FAQ from '../views/FAQ';
 
 export default [
@@ -22,11 +23,26 @@ export default [
         },
     },
     {
+        path: '/commands',
+        name: 'commands',
+        component: Commands,
+        meta: {
+            index: 5,
+            title: 'Commands - AvaIre Discord Bot',
+            metaTags: [
+                {
+                    name: 'description',
+                    content: 'Lorem ipsum'
+                },
+            ],
+        },
+    },
+    {
         path: '/faq',
         name: 'faq',
         component: FAQ,
         meta: {
-            index: 1,
+            index: 10,
             title: 'FAQ - AvaIre Discord Bot',
             metaTags: [
                 {

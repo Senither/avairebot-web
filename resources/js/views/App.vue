@@ -22,6 +22,10 @@
                                     Home
                                 </router-link>
 
+                                <router-link :to="{ name: 'commands' }"  active-class="is-active" class="navbar-item" exact>
+                                    Commands
+                                </router-link>
+
                                 <router-link :to="{ name: 'faq' }"  active-class="is-active" class="navbar-item" exact>
                                     FAQ
                                 </router-link>
