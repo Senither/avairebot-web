@@ -1,10 +1,10 @@
 <template>
     <section class="section content">
         <div class="container">
-            <h1 class="title">FAQ</h1>
-            <h2 class="subtitle">
+            <h1 class="title is-1">FAQ</h1>
+            <h5 class="subtitle is-5">
                 Lorem ipsum dolor sit amet.
-            </h2>
+            </h5>
 
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
             tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
