@@ -1,7 +1,6 @@
 import Home from '../views/Home';
 import Hero from '../views/Hero';
 import FAQ from '../views/FAQ';
-import RedirectToUrl from '../views/RedirectToUrl';
 
 export default [
     {
@@ -35,24 +34,6 @@ export default [
                     content: 'Lorem ipsum'
                 },
             ],
-        },
-    },
-    {
-        path: '/support',
-        name: 'support',
-        component: RedirectToUrl,
-        meta: {
-            index: 999,
-            title: 'Redirecting to the support server',
-        },
-    },
-    {
-        path: '/invite',
-        name: 'invite',
-        component: RedirectToUrl,
-        meta: {
-            index: 999,
-            title: 'Redirecting to the invite url',
         },
     },
     {

@@ -26,20 +26,20 @@
                                     FAQ
                                 </router-link>
 
-                                <router-link :to="{ name: 'support' }"  active-class="is-active" class="navbar-item" exact>
+                                <a :href="url('/support')" class="navbar-item">
                                     Support
-                                </router-link>
+                                </a>
 
-                                <router-link :to="{ name: 'invite' }"  active-class="is-active" class="navbar-item" exact>
+                                <a :href="url('/invite')" class="navbar-item">
                                     Invite
-                                </router-link>
+                                </a>
                             </div>
 
                             <div class="navbar-end">
                                 <div class="navbar-item">
                                     <div class="buttons">
-                                        <a class="button is-primary">
-                                            <strong>Login with Discord</strong>
+                                        <a class="button is-primary" disabled>
+                                            <strong> <i class="discord"></i> Login with Discord</strong>
                                         </a>
                                     </div>
                                 </div>
@@ -79,9 +79,6 @@
             };
         },
         methods: {
-            url(route) {
-                return window.baseUrl + route;
-            },
             setHeroHeight(routeName) {
                 this.isFullheight = ['home'].indexOf(routeName) > -1;
             },

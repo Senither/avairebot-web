@@ -12,17 +12,17 @@
             <br><br>
 
             <p>
-                <router-link :to="{ name: 'invite' }" class="button is-discord is-large" exact>
+                <a :href="url('/invite')" class="button is-discord is-large">
                     Invite AvaIre
-                </router-link>
+                </a>
             </p>
 
             <br>
 
             <p>
-                <router-link :to="{ name: 'support' }" exact>
+                <a :href="url('/support')">
                     Join our Support Server
-                </router-link>
+                </a>
             </p>
         </div>
     </div>
