@@ -2,6 +2,25 @@
 html, body {
     background-color: $body-bg;
     font-family: 'Roboto', sans-serif;
+    color: $white;
+}
+
+.content h1,
+.content h2,
+.content h3,
+.content h4,
+.content h5,
+.content h6,
+.content p {
+    color: $white;
+}
+
+a {
+    color: $primary;
+
+    &:hover, &:focus {
+        color: lighten($primary, 20%);
+    }
 }
 
 footer.footer {
