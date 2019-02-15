@@ -23,6 +23,25 @@ a {
     }
 }
 
+.content .stats {
+    width: 100%;
+    background-color: $dark;
+
+    & i {
+        color: $primary;
+        font-size: 3.725em;
+        padding-bottom: 12px;
+    }
+
+    & p {
+        text-transform: uppercase;
+    }
+
+    & h2.title {
+        margin-top: 0px;
+    }
+}
+
 footer.footer {
     background-color: $dark;
 }

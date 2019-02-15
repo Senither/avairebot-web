@@ -1,6 +1,38 @@
 <template>
-    <section class="section content">
-        <div class="container">
+    <section class="content">
+        <div class="stats">
+            <div class="section container">
+                <div class="columns has-text-centered">
+
+                    <div class="column">
+                        <i class="fas fa-home"></i>
+                        <p>Servers</p>
+                        <h2 class="title is-2">{{ this.getStats('global.guilds') }}</h2>
+                    </div>
+
+                    <div class="column">
+                        <i class="fab fa-rocketchat"></i>
+                        <p>Channels</p>
+                        <h2 class="title is-2">{{ this.getStats('global.channels.total') }}</h2>
+                    </div>
+
+                    <div class="column">
+                        <i class="far fa-user"></i>
+                        <p>Users</p>
+                        <h2 class="title is-2">{{ this.getStats('global.users') }}</h2>
+                    </div>
+
+                    <div class="column">
+                        <i class="fas fa-code"></i>
+                        <p>Lines of code</p>
+                        <h2 class="title is-2">80,000+</h2>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="section container">
 
             <div class="columns">
                 <div class="column has-text-centered">
