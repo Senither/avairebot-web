@@ -40,7 +40,7 @@ Vue.mixin({
             if (isNaN(statsCopy)) {
                 return statsCopy;
             }
-            return statsCopy.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+            return this.formatNumber(statsCopy);
         },
         refreshStats() {
             if (this.loadingStats) {
@@ -56,6 +56,9 @@ Vue.mixin({
             }).catch(error => {
                 this.loadingStats = false;
             });
+        },
+        formatNumber(number) {
+            return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
         }
     }
 });

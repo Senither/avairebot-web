@@ -2,6 +2,7 @@ import Home from '../views/Home';
 import Hero from '../views/Hero';
 import Commands from '../views/Commands';
 import FAQ from '../views/FAQ';
+import Leaderboard from '../views/Leaderboard';
 
 export default [
     {
@@ -44,6 +45,21 @@ export default [
         meta: {
             index: 10,
             title: 'FAQ - AvaIre Discord Bot',
+            metaTags: [
+                {
+                    name: 'description',
+                    content: 'Lorem ipsum'
+                },
+            ],
+        },
+    },
+    {
+        path: '/leaderboard/:id',
+        name: 'leaderboard',
+        component: Leaderboard,
+        meta: {
+            index: 150,
+            title: 'Leaderboard - AvaIre Discord Bot',
             metaTags: [
                 {
                     name: 'description',

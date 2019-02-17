@@ -10,4 +10,13 @@ $line-height-base: 1.6;
 // Colors (Bulma Variables)
 $primary: #fb4622;
 $dark: #141414;
+$grey: #777777;
 $white: #ebebeb;
+
+// Table Colors (Bulma Variables)
+$table-color: $white;
+$table-background-color: $body-bg;
+$table-striped-row-even-background-color: #171717;
+$table-row-hover-background-color: rgba($primary, 5%);
+$table-striped-row-even-hover-background-color: rgba($primary, 5%);
+$table-cell-border: 1px solid $dark;
