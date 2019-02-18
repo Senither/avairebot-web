@@ -16,7 +16,7 @@
                             </a>
                         </div>
 
-                        <div id="mainNav" class="navbar-menu">
+                        <div id="mainNav" class="navbar-menu" aria-label="dropdown navigation">
                             <div class="navbar-start">
                                 <router-link :to="{ name: 'home' }" active-class="is-active" class="navbar-item" exact>
                                     Home
@@ -37,6 +37,34 @@
                                 <a :href="url('/invite')" class="navbar-item">
                                     Invite
                                 </a>
+
+                                <div class="navbar-item has-dropdown is-hoverable">
+                                    <a class="navbar-link">
+                                        Ecosystem
+                                    </a>
+
+                                    <div class="navbar-dropdown">
+                                        <a href="https://github.com/avaire" class="navbar-item">
+                                            <i class="fab fa-github"></i> GitHub Organization
+                                        </a>
+
+                                        <hr class="navbar-divider">
+
+                                        <a class="navbar-item">
+                                            Self-Hosting Guides
+                                        </a>
+
+                                        <a class="navbar-item">
+                                            Plugin Developer Guide
+                                        </a>
+
+                                        <hr class="navbar-divider">
+
+                                        <a href="https://status.avairebot.com/" class="navbar-item">
+                                            Service Status
+                                        </a>
+                                    </div>
+                                </div>
                             </div>
 
                             <div class="navbar-end">

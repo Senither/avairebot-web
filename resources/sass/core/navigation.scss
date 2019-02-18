@@ -7,4 +7,12 @@
         padding-right: 20px;
         padding-top: 10px;
     }
+
+    .navbar-link, .navbar-item {
+        color: $white !important;
+
+        & i {
+            padding-right: 5px;
+        }
+    }
 }
