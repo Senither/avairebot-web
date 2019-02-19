@@ -114,10 +114,3 @@
     }
 </script>
 
-<style type="text/css" scoped>
-    .transparent {
-        font-size: 8em;
-        border-color: rgba(0, 0, 0, 0) !important;
-        background-color: rgba(0, 0, 0, 0) !important;
-    }
-</style>

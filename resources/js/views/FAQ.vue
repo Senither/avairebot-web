@@ -1,17 +1,32 @@
 <template>
-    <section class="section content">
-        <div class="container">
-            <h1 class="title is-1">FAQ</h1>
-            <h5 class="subtitle is-5">
-                Lorem ipsum dolor sit amet.
-            </h5>
+    <section class="content">
+        <div class="section container has-text-centered">
+            <h2 class="title is-2">Frequently Asked Questions</h2>
 
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <div class="control has-icons-left has-icons-right">
+                <input class="input is-large is-rounded" type="text" placeholder="What did you need help with?" v-model="query">
+                <span class="icon is-medium is-left">
+                    <i class="fas fa-question"></i>
+                </span>
+            </div>
+        </div>
+
+        <div class="section container" v-if="this.sortedFaqs != null && this.sortedFaqs.length > 0" >
+            <ul>
+                <li v-for="category in this.sortedFaqs">
+                    {{ category.name }}
+                    <ul>
+                        <li v-for="item of category.faqs">
+                            <strong>{{ item.title }}</strong>
+                            <br><span v-html="item.body"></span>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <div class="section container has-text-centered" v-else>
+            <p class="button is-loading transparent"></p>
         </div>
   </section>
 </template>
@@ -19,7 +34,24 @@
 <script>
     export default {
         mounted() {
-            console.log('FAQ mounted.');
-        }
+            axios('/api/faq').then(response => {
+                if (response.status == 200) {
+                    this.faq = response.data.data;
+                }
+            }).catch(error => {
+                this.faq = null;
+            });
+        },
+        data() {
+            return {
+                faq: null,
+                query: null,
+            };
+        },
+        computed: {
+            sortedFaqs () {
+                return this.faq;
+            }
+        },
     }
 </script>
