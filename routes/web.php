@@ -13,6 +13,7 @@
 
 Route::prefix('api')->group(function () {
     Route::get('/commands', 'CommandsController@index');
+    Route::get('/faq', 'FaqController@index');
 });
 
 Route::get('/support', 'RedirectController@support');
