@@ -9,14 +9,27 @@
                                 AvaIre
                             </router-link>
 
-                            <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="mainNav">
+                            <a
+                                role="button"
+                                class="navbar-burger burger"
+                                aria-label="menu"
+                                aria-expanded="false"
+                                data-target="mainNav"
+                                v-on:click="toggleMenu"
+                                v-bind:class="{ 'is-active': isMenuSelected }"
+                            >
                                 <span aria-hidden="true"></span>
                                 <span aria-hidden="true"></span>
                                 <span aria-hidden="true"></span>
                             </a>
                         </div>
 
-                        <div id="mainNav" class="navbar-menu" aria-label="dropdown navigation">
+                        <div
+                            id="mainNav"
+                            class="navbar-menu"
+                            aria-label="dropdown navigation"
+                            v-bind:class="{ 'is-active': isMenuSelected }"
+                        >
                             <div class="navbar-start">
                                 <router-link :to="{ name: 'home' }" active-class="is-active" class="navbar-item" exact>
                                     Home
@@ -108,15 +121,22 @@
             return {
                 transitionDirection: 'slide-right',
                 isFullheight: false,
+                isMenuSelected: false,
             };
         },
         methods: {
             setHeroHeight(routeName) {
                 this.isFullheight = ['home'].indexOf(routeName) > -1;
             },
+            toggleMenu() {
+                this.isMenuSelected = ! this.isMenuSelected;
+            },
         },
         watch: {
             '$route' (to, from) {
+                // Deselect the menu on page navigation.
+                this.isMenuSelected = false;
+
                 const toDepth = to.meta.index || 0;
                 const fromDepth = from.meta.index || 0;
 
