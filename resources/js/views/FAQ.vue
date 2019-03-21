@@ -12,11 +12,15 @@
         </div>
 
         <div class="section container" v-if="this.sortedFaqs != null && this.sortedFaqs.length > 0" >
-            <article class="message is-primary" v-for="category in this.sortedFaqs">
-                <div class="message-header">
-                    {{ category.name }}
+            <article class="message is-medium is-primary" v-for="category in this.sortedFaqs">
+                <div class="message-header" v-on:click="category.display = !category.display" :class="{ 'closed-message': !category.display }">
+                    <p>
+                        <i class="fas fa-chevron-down" v-if="category.display"></i>
+                        <i class="fas fa-chevron-right" v-else></i>
+                        {{ category.name }}
+                    </p>
                 </div>
-                <div class="message-body">
+                <div class="message-body" v-show="category.display">
                     <article class="message" v-for="item of category.faqs">
                         <div class="message-body">
                             <strong>{{ item.title }}</strong>
@@ -33,12 +37,25 @@
   </section>
 </template>
 
+<style type="text/css">
+    .message-header i.fas {
+        width: 26px;
+    }
+    .closed-message {
+        border-radius: 3px;
+    }
+</style>
+
 <script>
     export default {
         mounted() {
             axios('/api/faq').then(response => {
                 if (response.status == 200) {
-                    this.faq = response.data.data;
+                    this.faq = response.data.data.map(item => {
+                        item.display = false;
+
+                        return item;
+                    });
                 }
             }).catch(error => {
                 this.faq = null;
