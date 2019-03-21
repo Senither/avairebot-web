@@ -1,0 +1,8 @@
+
+.tabs:not(.is-toggle) li > a {
+    margin-bottom: -3px !important;
+
+    &:hover {
+        border-bottom-color: $grey !important;
+    }
+}

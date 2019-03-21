@@ -12,6 +12,23 @@
             </ul>
         </div>
 
+        <div class="container">
+            <div class="tabs is-fullwidth">
+                <ul>
+                    <li :class="{ 'is-active': this.selected == null }">
+                        <a v-on:click="setSelectedCategory(null)">
+                            <span>All</span>
+                        </a>
+                    </li>
+                    <li v-for="category in Object.keys(this.commands)" :class="{ 'is-active': selected == category }">
+                        <a v-on:click="setSelectedCategory(category)">
+                            <span>{{ category }}</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
         <div class="section container" v-if="this.totalCommands > 0" >
             <div v-for="category in Object.keys(this.sortedCommands)">
                 <command-category
@@ -44,11 +61,24 @@
             return {
                 commands: null,
                 query: null,
+                selected: null,
             };
+        },
+        methods: {
+            setSelectedCategory(category) {
+                this.selected = category;
+            }
         },
         computed: {
             sortedCommands () {
-                return this.commands;
+                if (this.selected == null) {
+                    return this.commands;
+                }
+
+                let obj = {};
+                obj[this.selected] = this.commands[this.selected];
+
+                return obj;
             },
             totalCommands() {
                 if (this.commands == null) {
