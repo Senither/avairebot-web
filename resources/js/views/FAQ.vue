@@ -12,17 +12,19 @@
         </div>
 
         <div class="section container" v-if="this.sortedFaqs != null && this.sortedFaqs.length > 0" >
-            <ul>
-                <li v-for="category in this.sortedFaqs">
+            <article class="message is-primary" v-for="category in this.sortedFaqs">
+                <div class="message-header">
                     {{ category.name }}
-                    <ul>
-                        <li v-for="item of category.faqs">
+                </div>
+                <div class="message-body">
+                    <article class="message" v-for="item of category.faqs">
+                        <div class="message-body">
                             <strong>{{ item.title }}</strong>
                             <br><span v-html="item.body"></span>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
+                        </div>
+                    </article>
+                </div>
+            </article>
         </div>
 
         <div class="section container has-text-centered" v-else>

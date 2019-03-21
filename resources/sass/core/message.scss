@@ -1,0 +1,14 @@
+
+.message {
+    &.is-primary {
+        background-color: $dark;
+
+        & .message-body {
+            color: $white;
+
+            & strong {
+                color: $primary;
+            }
+        }
+    }
+}
