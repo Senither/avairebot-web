@@ -14,7 +14,7 @@
 
         <div v-if="this.commands != null">
             <div class="container">
-                <div class="tabs is-fullwidth">
+                <div class="tabs is-toggle is-fullwidth">
                     <ul>
                         <li :class="{ 'is-active': this.selected == null }">
                             <a v-on:click="setSelectedCategory(null)">
