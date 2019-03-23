@@ -9,6 +9,15 @@ class FaqCategory extends Model
 {
     use HideTimestampsTrait;
 
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = [
+        'name'
+    ];
+
     public function faqs()
     {
         return $this->hasMany(Faq::class, 'category');

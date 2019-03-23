@@ -1,0 +1,18 @@
+
+category-name: Basics
+
+category-priority: 10
+
+faqs:
+  - title: Test Item 1
+    body: |-
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore cumque sint provident? Iure quasi voluptates iste,
+      ab hic, possimus quibusdam rerum eveniet adipisci a ullam, fugiat qui odio quod id.
+  - title: Test Item 2
+    body: |-
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi aspernatur animi eum quis similique tempore illum quo,
+      corporis libero quae, nobis vero incidunt expedita, doloribus magnam. Omnis eos totam, ducimus!
+  - title: Test Item 3
+    body: |-
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam earum molestias magnam eos repellat tempora iste
+      dolor libero nobis. Minus expedita deserunt maxime aut dignissimos incidunt quod? Recusandae voluptatibus, vitae.
