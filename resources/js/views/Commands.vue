@@ -17,12 +17,12 @@
                 <div class="tabs is-toggle is-fullwidth">
                     <ul>
                         <li :class="{ 'is-active': this.selected == null }">
-                            <a v-on:click="setSelectedCategory(null)">
+                            <a href="#all" v-on:click="setSelectedCategory('all')">
                                 <span>All</span>
                             </a>
                         </li>
                         <li v-for="category in Object.keys(this.commands)" :class="{ 'is-active': selected == category }">
-                            <a v-on:click="setSelectedCategory(category)">
+                            <a :href="'#' + category.toLowerCase()" v-on:click="setSelectedCategory(category)">
                                 <span>{{ category }}</span>
                             </a>
                         </li>
@@ -54,6 +54,16 @@
             axios('/api/commands').then(response => {
                 if (response.status == 200) {
                     this.commands = response.data.data;
+
+                    let parts = window.location.href.split("#");
+                    if (parts.length == 2) {
+                        let lowercaseKeys = Object.keys(response.data.data)
+                            .map(category => category.toLowerCase());
+
+                        if (lowercaseKeys.indexOf(parts[1].toLowerCase()) > -1) {
+                            this.setSelectedCategory(parts[1]);
+                        }
+                    }
                 }
             }).catch(error => {
                 this.commands = null;
@@ -68,7 +78,11 @@
         },
         methods: {
             setSelectedCategory(category) {
-                this.selected = category;
+                let result = Object.keys(this.commands).find(name => {
+                    return name.toLowerCase() == category.toLowerCase();
+                });
+
+                this.selected = result == null || result == undefined ? null : result;
             }
         },
         computed: {

@@ -35,7 +35,7 @@
                                     Home
                                 </router-link>
 
-                                <router-link :to="{ name: 'commands' }"  active-class="is-active" class="navbar-item" exact>
+                                <router-link :to="{ name: 'commands' }"  active-class="is-active" class="navbar-item">
                                     Commands
                                 </router-link>
 
