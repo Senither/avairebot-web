@@ -1,5 +1,17 @@
 
 .message {
+    &.is-command {
+        & .message-header {
+            color: $white;
+            background-color: $dark;
+        }
+
+        & .message-body {
+            color: $white;
+            background-color: rgba($dark, 60%);
+        }
+    }
+
     &.is-primary {
         background-color: $dark;
 

@@ -35,6 +35,7 @@
                     <command-category
                         :name="category"
                         :category="sortedCommands[category]"
+                        @see-also="handleSeeAlsoEvent"
                     />
                 </div>
             </div>
@@ -60,8 +61,16 @@
                         let lowercaseKeys = Object.keys(response.data.data)
                             .map(category => category.toLowerCase());
 
-                        if (lowercaseKeys.indexOf(parts[1].toLowerCase()) > -1) {
-                            this.setSelectedCategory(parts[1]);
+                        parts = parts[1].split(':');
+
+                        if (lowercaseKeys.indexOf(parts[0].toLowerCase()) > -1) {
+                            this.setSelectedCategory(parts[0]);
+                        }
+
+                        if (parts.length == 2 && this.selected != null) {
+                            if (this.commands[this.selected].commands.hasOwnProperty(parts[1])) {
+                                this.commands[this.selected].commands[parts[1]].isShown = true;
+                            }
                         }
                     }
                 }
@@ -83,10 +92,22 @@
                 });
 
                 this.selected = result == null || result == undefined ? null : result;
+            },
+            handleSeeAlsoEvent(event) {
+                if (! this.commands.hasOwnProperty(event.category)) {
+                    return;
+                }
+
+                if (! this.commands[event.category].commands.hasOwnProperty(event.command)) {
+                    return;
+                }
+
+                this.$set(this.commands[event.category].commands[event.command], 'isShown', true);
+                this.setSelectedCategory(event.category);
             }
         },
         computed: {
-            sortedCommands () {
+            sortedCommands() {
                 if (this.selected == null) {
                     return this.commands;
                 }
