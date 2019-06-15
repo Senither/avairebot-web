@@ -1,0 +1,48 @@
+
+html, body {
+    background-color: $body-bg;
+    font-family: 'Roboto', sans-serif;
+    color: $white;
+}
+
+.content h1,
+.content h2,
+.content h3,
+.content h4,
+.content h5,
+.content h6,
+.content p,
+.content strong {
+    color: $white;
+}
+
+a {
+    color: $primary;
+
+    &:hover, &:focus {
+        color: lighten($primary, 20%);
+    }
+}
+
+.content .stats {
+    width: 100%;
+    background-color: $dark;
+
+    & i {
+        color: $primary;
+        font-size: 3.725em;
+        padding-bottom: 12px;
+    }
+
+    & p {
+        text-transform: uppercase;
+    }
+
+    & h2.title {
+        margin-top: 0px;
+    }
+}
+
+footer.footer {
+    background-color: $dark;
+}

@@ -1,20 +1,56 @@
 
 // Body
-$body-bg: #f8fafc;
+$body-bg: #1B1B1B;
 
 // Typography
 $font-family-sans-serif: "Nunito", sans-serif;
 $font-size-base: 0.9rem;
 $line-height-base: 1.6;
 
-// Colors
-$blue: #3490dc;
-$indigo: #6574cd;
-$purple: #9561e2;
-$pink: #f66D9b;
-$red: #e3342f;
-$orange: #f6993f;
-$yellow: #ffed4a;
-$green: #38c172;
-$teal: #4dc0b5;
-$cyan: #6cb2eb;
+// Colors (Bulma Variables)
+$primary: #fb4622;
+$primary-light: #f87d6d;
+$dark: #141414;
+$grey: #777777;
+$white: #ebebeb;
+
+// Table Colors (Bulma Variables)
+$table-color: $white;
+$table-background-color: $body-bg;
+$table-striped-row-even-background-color: #171717;
+$table-row-hover-background-color: rgba($primary, 5%);
+$table-striped-row-even-hover-background-color: rgba($primary, 5%);
+$table-cell-border: 1px solid $dark;
+
+// Nav Colors (Bulma Variables)
+$navbar-dropdown-arrow: $primary-light;
+$navbar-dropdown-background-color: $primary;
+$navbar-dropdown-item-hover-background-color: $primary;
+$navbar-dropdown-item-active-background-color: $primary;
+$navbar-divider-background-color: $primary-light;
+$navbar-box-shadow-color: $primary-light;
+$navbar-item-hover-background-color: #FB3109;
+$navbar-dropdown-border-top: 2px solid $primary-light;
+
+// Inputs (Bulma Variables)
+$input-color: $white;
+$input-border-color: $dark;
+$input-background-color: $body-bg;
+$input-hover-color: $primary;
+$input-focus-border-color: $primary;
+$input-hover-border-color: $primary;
+$input-focus-box-shadow-color: rgba($primary, 20%);
+$input-shadow: 0px 1px 2px 0px rgba($primary, 65%);
+$input-icon-color: $grey;
+$input-icon-active-color: $grey;
+$input-arrow: $primary;
+
+// Tabs (Bulma Variables)
+$tabs-link-active-color: $primary;
+$tabs-link-active-border-bottom-color: $primary;
+$tabs-toggle-link-active-background-color: $primary;
+$tabs-toggle-link-active-border-color: $primary;
+
+// Message (Bulma Variables)
+$message-background-color: $body-bg;
+$message-header-background-color: $dark;

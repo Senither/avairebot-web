@@ -1,49 +1,23 @@
 
 // Fonts
-@import url('https://fonts.googleapis.com/css?family=Nunito');
+@import url('https://fonts.googleapis.com/css?family=Condiment|Roboto');
 
 // Variables
 @import 'variables';
 
-// Bootstrap
-@import '~bootstrap/scss/bootstrap';
+// Bulma
+@import '~bulma/bulma';
 
-.container.content {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    overflow-x: hidden;
-}
+// Animations
+@import 'animations/hero';
+@import 'animations/navigation';
 
-// Fade
-.fade-enter-active, .fade-leave-active {
-    transition: opacity .325s;
-}
-.fade-enter, .fade-leave-to {
-    opacity: 0;
-}
-
-// Slide
-.slide-left-leave-active, .slide-left-enter-active {
-    transition: 0.8s;
-}
-.slide-left-enter {
-    opacity: 0;
-    transform: translate(100%, 0);
-}
-.slide-left-leave-to {
-    opacity: 0;
-    transform: translate(-100%, 0);
-}
-
-.slide-right-leave-active, .slide-right-enter-active {
-    transition: 0.8s;
-}
-.slide-right-enter {
-    opacity: 0;
-    transform: translate(-100%, 0);
-}
-.slide-right-leave-to {
-    opacity: 0;
-    transform: translate(100%, 0);
-}
+// Core
+@import 'core/layout';
+@import 'core/button';
+@import 'core/navigation';
+@import 'core/loading';
+@import 'core/hero';
+@import 'core/leaderboard';
+@import 'core/tabs';
+@import 'core/message';

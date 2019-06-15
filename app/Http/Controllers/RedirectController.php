@@ -13,7 +13,7 @@ class RedirectController extends Controller
 
     public function invite(Request $request)
     {
-        return $this->handleRedirectTo($request, config('discord.support-url'));
+        return $this->handleRedirectTo($request, config('discord.invite-url'));
     }
 
     protected function handleRedirectTo(Request $request, $url)

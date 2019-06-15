@@ -1,31 +1,115 @@
 <template>
-    <div class="container content">
-        <div class="row justify-content-center">
-            <div class="col-md-12">
-                <div class="card card-default">
-                    <div class="card-header">FAQ Page</div>
+    <section class="content">
+        <div class="section container has-text-centered">
+            <h2 class="title is-2">Frequently Asked Questions</h2>
 
-                    <div class="card-body">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita laborum tempora nulla, delectus fuga, optio officiis distinctio doloremque non iusto quod earum modi aperiam dolorum beatae commodi dicta est? Corporis.
-
-                        <ul>
-                            <li>1</li>
-                            <li>2</li>
-                            <li>3</li>
-                            <li>4</li>
-                            <li>5</li>
-                        </ul>
-                    </div>
-                </div>
+            <div class="control has-icons-left">
+                <input class="input is-large is-rounded" type="text" placeholder="What did you need help with?" v-model="query" autofocus>
+                <span class="icon is-medium is-left">
+                    <i class="fas fa-question"></i>
+                </span>
             </div>
         </div>
-    </div>
+
+        <div class="section container" v-if="this.sortedFaqs != null" >
+            <div v-if="this.sortedFaqs.length > 0">
+                <article class="message is-medium is-primary" v-for="category in this.sortedFaqs">
+                    <div class="message-header" v-on:click="category.display = !category.display" :class="{ 'closed-message': !category.display }">
+                        <p>
+                            <i class="fas fa-chevron-down" v-if="category.display"></i>
+                            <i class="fas fa-chevron-right" v-else></i>
+                            {{ category.name }}
+                        </p>
+                    </div>
+                    <div class="message-body" v-show="category.display">
+                        <article class="message" v-for="item of category.faqs">
+                            <div class="message-header has-background-black-ter" v-on:click="item.display = !item.display" :class="{ 'closed-message': !item.display }">
+                                <p>
+                                    <i class="fas fa-chevron-down" v-if="item.display"></i>
+                                    <i class="fas fa-chevron-right" v-else></i>
+                                    {{ item.title }}
+                                </p>
+                            </div>
+                            <div class="message-body" v-show="item.display">
+                                <span v-html="item.body"></span>
+                            </div>
+                        </article>
+                    </div>
+                </article>
+            </div>
+
+            <div v-else>
+                <h4 class="subtitle has-text-centered is-4">No entries were found matching your query!</h4>
+            </div>
+        </div>
+
+        <div class="section container has-text-centered" v-else>
+            <p class="button is-loading transparent"></p>
+        </div>
+  </section>
 </template>
+
+<style type="text/css">
+    .message-header {
+        cursor: pointer;
+    }
+    .message-header i.fas {
+        width: 26px;
+    }
+    .closed-message {
+        border-radius: 3px;
+    }
+</style>
 
 <script>
     export default {
         mounted() {
-            console.log('FAQ mounted.');
-        }
+            axios('/api/faq').then(response => {
+                if (response.status == 200) {
+                    this.faq = response.data.data.map(item => {
+                        item.display = false;
+
+                        item.faqs = item.faqs.map(entry => {
+                            entry.display = false;
+
+                            return entry;
+                        });
+
+                        return item;
+                    });
+                }
+            }).catch(error => {
+                this.faq = null;
+            });
+        },
+        data() {
+            return {
+                faq: null,
+                query: '',
+            };
+        },
+        computed: {
+            sortedFaqs() {
+                if (this.faq == null || this.query.trim().length == 0) {
+                    return this.faq;
+                }
+
+                let faqClone = JSON.parse(JSON.stringify(this.faq));
+                let query = this.query.trim().toLowerCase();
+
+                return faqClone.map(category => {
+                    category.display = true;
+
+                    category.faqs = Vue.util.extend([], [...category.faqs]).filter(item => {
+                        item.display = true;
+
+                        return item.title.toLowerCase().indexOf(query) > -1
+                            || item.body.toLowerCase().indexOf(query) > -1;
+                    });
+
+                    return category;
+                }).filter(category => category.faqs.length > 0);
+            }
+        },
     }
 </script>

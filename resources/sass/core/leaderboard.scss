@@ -1,0 +1,16 @@
+
+.content table td,
+.content table th {
+    border: none;
+}
+
+.content table tr {
+    border: 1px solid $dark;
+    border-width: 0 0 1px;
+}
+
+.table .xp,
+.table .xp strong,
+.table .discriminator {
+    color: $grey;
+}
