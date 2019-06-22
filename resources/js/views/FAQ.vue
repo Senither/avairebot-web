@@ -95,18 +95,22 @@
                 }
 
                 let faqClone = JSON.parse(JSON.stringify(this.faq));
-                let query = this.query.trim().toLowerCase();
+                let query = new RegExp(this.query.trim(), 'gi');
 
                 return faqClone.map(category => {
-                    category.display = true;
+                    let hasMatch = false;
 
-                    category.faqs = Vue.util.extend([], [...category.faqs]).filter(item => {
-                        item.display = true;
+                    category.faqs.map(faq => {
+                        faq.display = faq.title.match(query) || faq.body.match(query);
 
-                        return item.title.toLowerCase().indexOf(query) > -1
-                            || item.body.toLowerCase().indexOf(query) > -1;
+                        if (faq.display) {
+                            hasMatch = true;
+                        }
+
+                        return faq;
                     });
 
+                    category.display = hasMatch;
                     return category;
                 }).filter(category => category.faqs.length > 0);
             }
