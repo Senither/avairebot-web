@@ -4,7 +4,6 @@ import VueRouter from 'vue-router';
 
 Vue.use(VueRouter);
 
-import formatMetadata from './FormatMetadata';
 import routes from './Routes';
 
 const router = new VueRouter({
@@ -12,6 +11,12 @@ const router = new VueRouter({
     routes,
 });
 
+import {
+    formatMetadata,
+    scrollToTop
+} from './functions';
+
 router.beforeEach(formatMetadata);
+router.beforeEach(scrollToTop);
 
 export default router;
