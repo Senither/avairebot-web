@@ -45,25 +45,25 @@
 
             <div class="columns has-text-centered">
                 <feature
-                    to="#/docs"
+                    to="#music"
                     icon="fa-music"
                     title="Stream Music"
                     body="Request music via youtube, soundcloud, twitch, radio links, or by name with ease."
                 />
                 <feature
-                    to="#/docs"
+                    to="#music:PlaylistCommand"
                     icon="fa-list"
                     title="Music Playlists"
                     body="Create custom music playlists and share your playlists with other people with ease."
                 />
                 <feature
-                    to="#/docs"
+                    to="#administration"
                     icon="fa-gavel"
                     title="Administration"
                     body="Administration made easy, take a load off your shoulders and let Ava do the hard work."
                 />
                 <feature
-                    to="#/docs"
+                    to="#administration:LevelCommand"
                     icon="fa-trophy"
                     title="Level & Leaderboards"
                     body="Earn XP and levels, and ranks through level ups, show off your rank via the website leaderboard on in-discord."
@@ -73,7 +73,7 @@
             <div class="columns has-text-centered">
                 <div class="column">
                     <feature
-                        to="#/docs"
+                        to="#administration:WelcomeCommand"
                         icon="fa-hand-holding-heart"
                         title="Join & Leave Messages"
                         body="Broadcast messages when users joins or leaves your server on a per-channel basis."
@@ -81,7 +81,7 @@
                 </div>
                 <div class="column">
                     <feature
-                        to="#/docs"
+                        to="#administration:LanguageCommand"
                         icon="fa-globe"
                         title="Bilingual Commands"
                         body="Ava supports multiple languages, you can change what languages Ava uses on the fly."
@@ -89,7 +89,7 @@
                 </div>
                 <div class="column">
                     <feature
-                        to="#/docs"
+                        to="#administration:ChangePrefixCommand"
                         icon="fa-pencil-alt"
                         title="Customizable Prefixes"
                         body="Don't like the default prefix? No worries, you can change it to anything you'd like."
@@ -97,7 +97,7 @@
                 </div>
                 <div class="column">
                     <feature
-                        to="#/docs"
+                        to="#fun"
                         icon="fa-gamepad"
                         title="Lots of Fun Commands"
                         body="Ava has a lot of fun/game commands, and more are constantly being added"
@@ -110,7 +110,7 @@
                     <br>
 
                     <h5 class="subtitle is-5">And much more!</h5>
-                    <p>Learn more by checking out the <a href="#/docs">Command List</a> to see all the commands in Ava.</p>
+                    <p>Learn more by checking out the <router-link :to="{ name: 'commands' }">Command List</router-link> to see all the commands in Ava.</p>
                 </div>
             </div>
 

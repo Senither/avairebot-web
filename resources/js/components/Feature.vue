@@ -1,13 +1,13 @@
 <template>
     <div class="column">
-        <a v-if="this.hasIcon" :href="getUrl()">
+        <router-link :to="{ name: 'commands', hash: this.to }">
             <i class="fas is-primary" :class="icon"></i>
-        </a>
+        </router-link>
 
-        <a :href="getUrl()">
+        <router-link :to="{ name: 'commands', hash: this.to }">
             <h4>{{ title }}</h4>
             <p>{{ body }}</p>
-        </a>
+        </router-link>
     </div>
 </template>
 
@@ -23,12 +23,6 @@
             hasIcon() {
                 return this.icon != undefined;
             },
-            getUrl() {
-                if (this.to == undefined) {
-                    return '#';
-                }
-                return this.url(this.to);
-            }
         }
     }
 </script>
