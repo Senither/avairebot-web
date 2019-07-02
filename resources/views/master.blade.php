@@ -15,5 +15,14 @@
         window.baseUrl = "{{ trim(config('app.url'), '/') }}";
     </script>
     <script src="{{ url('/') . mix('/js/avaire.js') }}"></script>
+    <script type="text/javascript" id="cookieinfo"
+        src="//cookieinfoscript.com/js/cookieinfo.min.js"
+        data-fg="#EBEBEB"
+        data-bg="#141414"
+        data-link="#FB4622"
+        data-divlink="#EBEBEB"
+        data-divlinkbg="#FB4622"
+        data-close-text="Got it!"
+    ></script>
 </body>
 </html>
