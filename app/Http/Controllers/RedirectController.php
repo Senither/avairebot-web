@@ -16,6 +16,16 @@ class RedirectController extends Controller
         return $this->handleRedirectTo($request, config('discord.invite-url'));
     }
 
+    public function developerHandbook(Request $request)
+    {
+        return $this->handleRedirectTo($request, config('discord.developer-handbook-url'));
+    }
+
+    public function selfhosting(Request $request)
+    {
+        return $this->handleRedirectTo($request, config('discord.self-hosting-url'));
+    }
+
     protected function handleRedirectTo(Request $request, $url)
     {
         if ($request->has('raw') && $request->get('raw') == 'yes') {

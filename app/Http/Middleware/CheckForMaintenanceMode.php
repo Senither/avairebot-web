@@ -14,5 +14,7 @@ class CheckForMaintenanceMode extends Middleware
     protected $except = [
         '/support',
         '/invite',
+        '/self-hosting',
+        '/developer-handbook',
     ];
 }

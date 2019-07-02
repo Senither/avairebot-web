@@ -18,5 +18,7 @@ Route::prefix('api')->group(function () {
 
 Route::get('/support', 'RedirectController@support');
 Route::get('/invite', 'RedirectController@invite');
+Route::get('/self-hosting', 'RedirectController@selfhosting');
+Route::get('/developer-handbook', 'RedirectController@developerHandbook');
 
 Route::get('/{any}', 'SpaController@index')->where('any', '.*');

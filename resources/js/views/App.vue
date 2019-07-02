@@ -63,11 +63,11 @@
 
                                         <hr class="navbar-divider">
 
-                                        <a class="navbar-item">
+                                        <a :href="url('/self-hosting')" class="navbar-item">
                                             Self-Hosting Guides
                                         </a>
 
-                                        <a class="navbar-item">
+                                        <a :href="url('/developer-handbook')" class="navbar-item">
                                             Plugin Developer Guide
                                         </a>
 
