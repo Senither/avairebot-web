@@ -29,7 +29,7 @@
         getPercentageToNextLevel,
         getExperienceInCurrentLevel,
         getExperienceBetweenCurrentAndNextLevel,
-    } from '../level/LevelManager';
+    } from '../utils/LevelManager';
 
     export default {
         props: {
