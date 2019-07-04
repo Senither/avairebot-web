@@ -16,7 +16,11 @@
         </div>
 
         <div class="container has-text-centered" v-else>
-
+            <div class="columns">
+                <div class="column">
+                    <h1>{{ name }}</h1>
+                </div>
+            </div>
             <div class="columns">
                 <div class="column is-one-quarter is-desktop">
 
@@ -51,7 +55,7 @@
                 </div>
 
                 <div class="column">
-                    <table class="table is-striped is-fullwidth is-hoverable">
+                    <table class="table is-fullwidth is-hoverable is-leaderboard">
                         <tbody>
                             <player-experience-table-row
                                 v-for="user of leaderboardUsers"
@@ -75,7 +79,6 @@
         mounted() {
             const { id } = this.$route.params;
 
-            // axios(`http://localhost:1256/leaderboard/${id}`).then(response => {
             axios(`https://api.avairebot.com/v1/leaderboard/${id}`).then(response => {
                 if (response.status == 200) {
                     this.name = response.data.name;

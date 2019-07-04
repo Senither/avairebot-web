@@ -1,16 +1,50 @@
 
-.content table td,
-.content table th {
-    border: none;
+.content table.is-leaderboard {
+    & tr {
+        border: 1px solid $dark;
+        border-width: 0 0 1px;
+
+        &:nth-child(odd) {
+            background-color: rgba($dark, 35%);
+        }
+        &:nth-child(1) {
+            background-color: rgba($primary, 15%);
+        }
+        &:nth-child(2) {
+            background-color: rgba($primary, 10%);
+        }
+        &:nth-child(3) {
+            background-color: rgba($primary, 5%);
+        }
+    }
+
+    & th, & td {
+        border: none;
+    }
+
+    & .rank {
+        width: 40px;
+        vertical-align: middle;
+        padding: 0px 0px 0px 15px;
+    }
+
+    & .avatar {
+        width: 60px;
+        vertical-align: middle;
+
+        & > figure {
+            margin: 0px;
+        }
+    }
+
+    & .username {
+        vertical-align: middle;
+    }
+
+    & .xp,
+    & .xp strong,
+    & .discriminator {
+        color: $grey;
+    }
 }
 
-.content table tr {
-    border: 1px solid $dark;
-    border-width: 0 0 1px;
-}
-
-.table .xp,
-.table .xp strong,
-.table .discriminator {
-    color: $grey;
-}
