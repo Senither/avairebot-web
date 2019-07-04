@@ -39,14 +39,19 @@
                         </article>
                     </div>
 
-                    <div class="tile is-parent">
+                    <div class="tile is-parent" v-if="roles.length > 0">
                         <article class="tile is-child notification is-dark">
                             <div class="content">
                                 <p class="subtitle">Level Rewards</p>
                                 <div class="content">
-
-                                    <p>Level roles goes here...</p>
-
+                                    <table class="table is-fullwidth is-hoverable is-role-reward">
+                                        <tr class="level-reward" v-for="role of roles">
+                                            <th class="role-level">Level {{ role.level }}</th>
+                                            <th>
+                                                <span class="tag is-role">{{ role.roleName }}</span>
+                                            </th>
+                                        </tr>
+                                    </table>
                                 </div>
                             </div>
                         </article>
@@ -85,6 +90,7 @@
                     this.enabled = response.data.enabled;
                     this.modifier = response.data.modifier;
                     this.leaderboard = response.data.leaderboard;
+                    this.roles = response.data.roles.reverse();
                 }
 
                 this.isLoading = false;
@@ -96,6 +102,7 @@
                 enabled: false,
                 modifier: -1,
                 leaderboard: [],
+                roles: [],
                 isLoading: true,
                 isError: false,
             };
