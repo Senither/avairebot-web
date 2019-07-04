@@ -30,7 +30,7 @@
                     </span>
                 </p>
                 <p v-else>
-                    <strong>The user running the command must have the following permissions</strong><br>
+                    <strong>The user running the command must have the following permission{{ formattedRequiredPermission.user.length != 1 ? 's' : null }}</strong><br>
                     <ul>
                         <li class="tag is-primary" v-for="requirement of formattedRequiredPermission.user">
                             {{ requirement }}
