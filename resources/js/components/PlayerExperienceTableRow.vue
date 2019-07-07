@@ -38,7 +38,7 @@
         },
         methods: {
             loadDefaultAvatar(event) {
-                event.target.src = 'https://avairebot.com/images/no-guild.png';
+                event.target.src = this.url('/img/default-avatar.png');
             },
             buildAvatarUrl(user) {
                 return `https://cdn.discordapp.com/avatars/${user.id}/${user.avatar}.png`;
