@@ -75,7 +75,7 @@
                         <a
                             :href="'#' + link.category + ':' + link.command"
                             @click="handleClickOnSeeAlso(link)"
-                        >{{ link.command }}</a>
+                        >{{ link.name.substr(0, link.name.length - 8) }}</a>
                     </li>
                 </ul>
             </div>
@@ -171,9 +171,14 @@
                         continue;
                     }
 
+                    let name = part[1]
+                        .split(/(?=[A-Z])/)
+                        .join(' ');
+
                     relationships.push({
                         category: part[0],
                         command: part[1],
+                        name,
                     });
                 }
 
