@@ -31,7 +31,7 @@
                                 </p>
                             </div>
                             <div class="message-body" v-show="item.display">
-                                <span v-html="item.body"></span>
+                                <span v-html="markdown(item.body)"></span>
                             </div>
                         </article>
                     </div>
@@ -62,6 +62,8 @@
 </style>
 
 <script>
+    import marked from 'marked';
+
     export default {
         mounted() {
             axios('/api/faq').then(response => {
@@ -87,6 +89,11 @@
                 faq: null,
                 query: '',
             };
+        },
+        methods: {
+            markdown(content) {
+                return marked(content);
+            }
         },
         computed: {
             sortedFaqs() {

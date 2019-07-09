@@ -4,15 +4,28 @@ category-name: Introduction
 category-priority: 5
 
 faqs:
-  - title: Test Item 1
+  - title: What is AvaIre Bot?
     body: |-
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore cumque sint provident? Iure quasi voluptates iste,
-      ab hic, possimus quibusdam rerum eveniet adipisci a ullam, fugiat qui odio quod id.
-  - title: Test Item 2
+      AvaIre is a feature-rich multipurpose bot for Discord, built to help enhance your Discord experience by providing you a set of tools to help moderate, manage, and entertain your server.
+  - title: How do I add AvaIre to my server?
     body: |-
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi aspernatur animi eum quis similique tempore illum quo,
-      corporis libero quae, nobis vero incidunt expedita, doloribus magnam. Omnis eos totam, ducimus!
-  - title: Test Item 3
+      You can add AvaIre to your Discord server by clicking on the following link:
+
+      https://avairebot.com/invite
+
+      **Note:** You must have a role with the “Administrator” or the “Manage Server” permission to be able to add Ava to a Discord Server. If you have either of these permissions you should be able to change the name of your server.
+      <br>Also make sure you’re logged in to the right account in the web browser when adding AvaIre, see https://discordapp.com/login
+  - title: What is Ava's Discord server for?
     body: |-
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam earum molestias magnam eos repellat tempora iste
-      dolor libero nobis. Minus expedita deserunt maxime aut dignissimos incidunt quod? Recusandae voluptatibus, vitae.
+      Avas Discord server is the official platform for everything related to AvaIre.
+
+      Here you’ll be able to:
+       - See information about Ava's latest features and updates.
+       - Keep up with all the news and announcements.
+       - Hang out with the members of our community!
+       - Suggest new features for Ava.
+       - Get support from our Staff members.
+
+      **Note:** For an invite to Ava's Discord server, use the following link:
+
+      https://avairebot.com/support
