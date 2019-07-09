@@ -104,8 +104,11 @@
         <footer class="footer">
             <div class="content has-text-centered">
                 <p>
-                    Created by <a href="https://senither.com/">Alexis Tan</a>, powered by <a href="https://m.do.co/c/9f589c4101c3">DigitalOcean</a>, <a href="https://bulma.io/">Bulma</a>, <a href="https://vuejs.org/">VueJS</a>, and <a href="https://laravel.com/">Laravel</a>.
-                    <br>"Discord", "Discord App", and any associated logos are registered trademarks of Hammer & Chisel, Inc.
+                    Created by <a href="https://senither.com/">Alexis Tan</a>, powered by
+                    <a href="https://m.do.co/c/9f589c4101c3"><i class="fab fa-digital-ocean"></i> DigitalOcean</a>,
+                    <a href="https://bulma.io/"><i class="fab fa-js"></i> Bulma</a>,
+                    <a href="https://vuejs.org/"><i class="fab fa-vuejs"></i> VueJS</a>,
+                    and <a href="https://laravel.com/"><i class="fab fa-laravel"></i> Laravel</a>.
                 </p>
             </div>
         </footer>
