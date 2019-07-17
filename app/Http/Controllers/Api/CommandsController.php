@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api;
 
 use Illuminate\Http\Request;
 
-class CommandsController extends Controller
+class CommandsController extends ApiController
 {
     protected $commandFile = 'commandMap.json';
 
@@ -23,10 +23,7 @@ class CommandsController extends Controller
                 return $this->sendInvalidFormat();
             }
 
-            return response([
-                'status' => 200,
-                'data' => $commands,
-            ]);
+            return $this->sendSuccess($commands);
         } catch (\Exception $e) {
             return $this->sendMissingFile();
         }
@@ -34,17 +31,11 @@ class CommandsController extends Controller
 
     protected function sendMissingFile()
     {
-        return response([
-            'status' => 404,
-            'reason' => 'The command map JSON file were not found.',
-        ], 404);
+        return $this->sendErrorResponse('The command map JSON file were not found.', 404);
     }
 
     protected function sendInvalidFormat()
     {
-        return response([
-            'status' => 500,
-            'reason' => 'The command map JSON file is not formatted correctly.',
-        ], 500);
+        return $this->sendErrorResponse('The command map JSON file is not formatted correctly.', 500);
     }
 }
