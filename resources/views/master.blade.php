@@ -13,6 +13,7 @@
 
     <script>
         window.baseUrl = "{{ trim(config('app.url'), '/') }}";
+        window.baseApiUrl = "{{ trim(config('ava.api-url'), '/') }}";
     </script>
     <script src="{{ mix('/js/avaire.js') }}"></script>
     <script type="text/javascript" id="cookieinfo"

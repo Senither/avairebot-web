@@ -6,6 +6,8 @@ import router from './router';
 
 import App from './views/App';
 
+const baseApi = window.baseApiUrl;
+
 Vue.mixin({
     data() {
         return {
@@ -48,7 +50,7 @@ Vue.mixin({
             }
 
             this.loadingStats = true;
-            axios('https://api.avairebot.com/v1/stats').then(response => {
+            axios(baseApi + '/v1/stats').then(response => {
                 this.loadingStats = false;
                 if (response.status == 200) {
                     this.stats = response.data;
