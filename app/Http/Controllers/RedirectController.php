@@ -16,6 +16,11 @@ class RedirectController extends Controller
         return $this->handleRedirectTo($request, config('discord.invite-url'));
     }
 
+    public function inviteCuttingEdge(Request $request)
+    {
+        return $this->handleRedirectTo($request, config('discord.invite-edge-url'));
+    }
+
     public function developerHandbook(Request $request)
     {
         return $this->handleRedirectTo($request, config('discord.developer-handbook-url'));

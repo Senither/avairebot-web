@@ -13,6 +13,7 @@
 
 Route::get('/support', 'RedirectController@support');
 Route::get('/invite', 'RedirectController@invite');
+Route::get('/invite-cutting-edge', 'RedirectController@inviteCuttingEdge');
 Route::get('/self-hosting', 'RedirectController@selfhosting');
 Route::get('/developer-handbook', 'RedirectController@developerHandbook');
 
