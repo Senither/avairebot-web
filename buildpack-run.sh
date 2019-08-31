@@ -1,4 +1,5 @@
-# This is buildpack-run.sh
+# Doing this temporarly b/c of system env variables missing
+mv .env.example .env
 # Remove package-lock as this is already done, Heroku can't decide at the node stage that yarn.local should be used instead.
 rm -rf package-lock.json
 # Installing the depedecies after PHP has been installed
