@@ -1,9 +1,6 @@
-# This is buildpack-run.sh
-# Remove package-lock as this is already done, Heroku can't decide at the node stage that yarn.local should be used instead.
-rm -rf package-lock.json
-# Installing the depedecies after PHP has been installed
-composer install
-# Generate artisan key
-php artisan key:generate
-# Migrate seed
-php artisan migrate --seed
+#!/bin/bash
+mv .env.example .env # Temp fix until we have system env variables
+rm -rf package-lock.json # package-lock.json interferes with yarn.lock on Heroku, removing as recommanded
+composer install # Get PHP depedecies installed
+php artisan key:generate # Temp fix until we have system env variables
+php artisan migrate --seed # Migrate and seed db
