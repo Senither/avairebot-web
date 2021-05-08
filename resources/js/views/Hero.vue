@@ -5,7 +5,7 @@
             <h1 class="avaire">AvaIre</h1>
 
             <h2 class="tagline">
-                A high quality Music bot, with moderation, interaction, search,
+                A high quality multipurpose bot, with moderation, interaction, search,
                 <br>administration commands, highly customizable and much more!
             </h2>
 

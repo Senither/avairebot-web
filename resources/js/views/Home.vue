@@ -44,33 +44,6 @@
             </div>
 
             <div class="columns has-text-centered">
-                <feature
-                    to="#music"
-                    icon="fa-music"
-                    title="Stream Music"
-                    body="Request music via youtube, soundcloud, twitch, radio links, or by name with ease."
-                />
-                <feature
-                    to="#music:PlaylistCommand"
-                    icon="fa-list"
-                    title="Music Playlists"
-                    body="Create custom music playlists and share your playlists with other people with ease."
-                />
-                <feature
-                    to="#administration"
-                    icon="fa-gavel"
-                    title="Administration"
-                    body="Administration made easy, take a load off your shoulders and let Ava do the hard work."
-                />
-                <feature
-                    to="#administration:LevelCommand"
-                    icon="fa-trophy"
-                    title="Level & Leaderboards"
-                    body="Earn XP and levels, and ranks through level ups, show off your rank via the website leaderboard on in-discord."
-                />
-            </div>
-
-            <div class="columns has-text-centered">
                 <div class="column">
                     <feature
                         to="#administration:WelcomeCommand"
@@ -79,6 +52,25 @@
                         body="Broadcast messages when users joins or leaves your server on a per-channel basis."
                     />
                 </div>
+                <div class="column">
+                    <feature
+                        to="#administration"
+                        icon="fa-gavel"
+                        title="Administration"
+                        body="Administration made easy, take a load off your shoulders and let Ava do the hard work."
+                    />
+                </div>
+                <div class="column">
+                    <feature
+                        to="#administration:LevelCommand"
+                        icon="fa-trophy"
+                        title="Level & Leaderboards"
+                        body="Earn XP and levels, and ranks through level ups, show off your rank via the website leaderboard on in-discord."
+                    />
+                </div>
+            </div>
+
+            <div class="columns has-text-centered">
                 <div class="column">
                     <feature
                         to="#administration:LanguageCommand"
